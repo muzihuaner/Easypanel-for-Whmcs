@@ -102,6 +102,18 @@ function easypanel_update_account($params,$edit)
 }
 function easypanel_CreateAccount($params) {
 	if ($params['username']=="") {
+		$username = $params['domain'];
+		if($username){
+			$username = preg_replace("/[^a-zA-Z0-9]/", "", $username);
+			$username = substr($username,0,8);
+			$username .= $params['serviceid'];
+		}else{
+			$username = "u".$params['serviceid'];
+		}
+		$params['username'] = $username;
+		update_query("tblhosting",array("username"=>$username),array("id"=>$params['serviceid']));
+	}
+	if ($params['username']=="") {
 		return "username cann't be empty";
 	}
 	return easypanel_update_account($params,false);
