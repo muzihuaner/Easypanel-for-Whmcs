@@ -170,8 +170,6 @@
 	</div>
     <h4 class="text-center">
         <small>禁止违规站点，请遵守《用户服务条款（Terms of Service）》</small>
-        </br>
-          <small>光速互联 www.LShost.cc</small>
     </h4>
 </div>
 		
